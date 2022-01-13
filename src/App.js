@@ -8,8 +8,8 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
 const HOST = {
-  WEB: "https://cs571.cs.wisc.edu/api/react/classes",
-  LOCAL: "http://localhost:5000/api/react/classes"
+  WEB: "https://cs571.cs.wisc.edu/api/react/",
+  LOCAL: "http://localhost:5000/api/react/"
 }
 
 class App extends React.Component {
@@ -35,11 +35,11 @@ class App extends React.Component {
 
   async loadInitialState() {
     //let courseURL = "http://cs571.cs.wisc.edu:53706/api/react/classes";
-    let courseURL = HOST.WEB;
+    let courseURL = HOST.WEB + "classes";
     let courseData = await (await fetch(courseURL)).json();
 
     //let completedCourseURL = "http://cs571.cs.wisc.edu:53706/api/react/students/5022025924/classes/completed";
-    let completedCourseURL = courseURL + "/students/5022025924/classes/completed/";
+    let completedCourseURL = HOST.WEB + "students/5022025924/classes/completed/";
     let completedCourseData = await (await fetch(completedCourseURL)).json();
     this.setState({
       allCourses: courseData,
