@@ -39,7 +39,7 @@ class App extends React.Component {
     let courseData = await (await fetch(courseURL)).json();
 
     //let completedCourseURL = "http://cs571.cs.wisc.edu:53706/api/react/students/5022025924/classes/completed";
-    let completedCourseURL = courseURL + "/completed";
+    let completedCourseURL = courseURL + "/students/5022025924/classes/completed/";
     let completedCourseData = await (await fetch(completedCourseURL)).json();
     this.setState({
       allCourses: courseData,
